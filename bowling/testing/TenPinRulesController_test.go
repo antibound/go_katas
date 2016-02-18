@@ -74,7 +74,23 @@ func TestSpareFirstFrameOtherNonMarkSecondFrame(t *testing.T) {
   }
 }
 
-//FirstFrameStrikeThenOpen
+func TestFirstFrameStrikeThenOpen(t *testing.T){
+  sut := controllers.NewTenPinRulesController()
+
+  frame := models.Frame{Ball1: 10, Ball2: 0, Number:1}
+  gameScore, err := sut.RollFrame(frame)
+
+  frame = models.Frame{Ball1: 5, Ball2: 4, Number:2}
+  gameScore, err = sut.RollFrame(frame)
+
+  if err != nil {
+    t.Error("\tThere was an error adding score.", err)
+  }
+
+  if gameScore != 28 {
+    t.Errorf("\tScore should be 28 but was %d", gameScore)
+  }
+}
 //FirstFrameStrikeThenSpare
 //First2FramesStrikeThenOpen
 //PefectGame
