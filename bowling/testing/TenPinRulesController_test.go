@@ -73,3 +73,9 @@ func TestSpareFirstFrameOtherNonMarkSecondFrame(t *testing.T) {
     t.Errorf("\tScore should be 24 but was %d", gameScore)
   }
 }
+
+//FirstFrameStrikeThenOpen
+//FirstFrameStrikeThenSpare
+//First2FramesStrikeThenOpen
+//PefectGame
+//FirstFrameSpareThenStrike
