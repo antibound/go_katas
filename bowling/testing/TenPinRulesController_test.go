@@ -55,21 +55,21 @@ func TestTooManyPinsError(t *testing.T){
     t.Error("\tExpected error of too many pins falling but received other")
   }
 }
-/*
-//TODO Rethink the AddScore method.  Shouldnt pass in previous frame score
+
 func TestSpareFirstFrameOtherNonMarkSecondFrame(t *testing.T) {
   sut := controllers.NewTenPinRulesController()
 
-  gameScore, err := sut.RollFrame(0, 9, 1)
-  gameScore, err = sut.RollFrame(10, 6, 2)
+    frame := models.Frame{Ball1: 9, Ball2: 1, Number:1}
+    gameScore, err := sut.RollFrame(frame)
+
+    frame = models.Frame{Ball1: 5, Ball2: 4, Number:2}
+    gameScore, err = sut.RollFrame(frame)
 
   if err != nil {
     t.Error("\tThere was an error adding score.", err)
   }
 
   if gameScore != 24 {
-    t.Error("\tScore was incorrect")
-//    fmt.Printf("\nIt was %d instead of 9", gameScore)
+    t.Errorf("\tScore should be 24 but was %d", gameScore)
   }
 }
-*/
